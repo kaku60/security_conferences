@@ -12,14 +12,11 @@ $html = scraperwiki::scrape("http://www.concise-courses.com/security/conferences
 $dom = new simple_html_dom();
 $dom->load($html);
 
-foreach($html){
-  preg_match("/Date: (.*)<br \/>/i", $html, $date);
-  preg_match("/Conference Title: <strong>(.*)<\/strong>/i", $html, $title);
-  preg_match("/Where: (.*)</i", $html, $where);
+  preg_match("/Date: (.*)<br \/>/i", $html, $conf['date']);
+  preg_match("/Conference Title: <strong>(.*)<\/strong>/i", $html, $conf['title']);
+  preg_match("/Where: (.*)</i", $html, $conf['where']);
 
-  print_r($date[1]\n);
-  print_r($title[1]\n);
-  print_r($where[1]\n);
+  print_r($conf[][1]\n);
 }
 // Write out to the sqlite database using scraperwiki library
 //scraperwiki::save_sqlite(array('name'), array('name' => 'susan', 'occupation' => 'software developer'));
