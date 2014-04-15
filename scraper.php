@@ -12,7 +12,7 @@ $html = scraperwiki::scrape("http://www.concise-courses.com/security/conferences
 $dom = new simple_html_dom();
 $dom->load($html);
 
-foreach(){
+foreach($html){
   preg_match("/Date: (.*)<br \/>/i", $html, $date);
   preg_match("/Conference Title: <strong>(.*)<\/strong>/i", $html, $title);
   preg_match("/Where: (.*)</i", $html, $where);
