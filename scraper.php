@@ -11,15 +11,16 @@ $html = scraperwiki::scrape("http://www.concise-courses.com/security/conferences
 // Find something on the page using css selectors
 $dom = new simple_html_dom();
 $dom->load($html);
-//foreach($dom->find("p strong") as $title){
-preg_match("/Date: (.*)<br \/>/i", $html, $date);
-preg_match("/Conference Title: <strong>(.*)<\/strong>/i", $html, $title);
-preg_match("/Where: (.*)</i", $html, $where);
 
-print_r($date[1]);
-print_r($title[1]);
-print_r($where[1]);
+foreach(){
+  preg_match("/Date: (.*)<br \/>/i", $html, $date);
+  preg_match("/Conference Title: <strong>(.*)<\/strong>/i", $html, $title);
+  preg_match("/Where: (.*)</i", $html, $where);
 
+  print_r($date[1]\n);
+  print_r($title[1]\n);
+  print_r($where[1]\n);
+}
 // Write out to the sqlite database using scraperwiki library
 //scraperwiki::save_sqlite(array('name'), array('name' => 'susan', 'occupation' => 'software developer'));
 
