@@ -19,7 +19,6 @@ preg_match("/Where: (.*)</i", $html, $where);
 print_r($date);
 print_r($title);
 print_r($where);
-}
 
 // Write out to the sqlite database using scraperwiki library
 //scraperwiki::save_sqlite(array('name'), array('name' => 'susan', 'occupation' => 'software developer'));
