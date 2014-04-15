@@ -9,14 +9,14 @@ require 'scraperwiki/simple_html_dom.php';
 $html = scraperwiki::scrape("http://www.concise-courses.com/security/conferences-of-2014/");
 
 // Find something on the page using css selectors
-$dom = new simple_html_dom();
-$dom->load($html);
+//$dom = new simple_html_dom();
+//$dom->load($html);
 
   preg_match("/Date: (.*)<br \/>/i", $html, $conf['date']);
   preg_match("/Conference Title: <strong>(.*)<\/strong>/i", $html, $conf['title']);
   preg_match("/Where: (.*)</i", $html, $conf['where']);
 
-  $abst[] = $conf;
+  $abst[] = $conf[][1];
   print_r($abst\n);
 }
 // Write out to the sqlite database using scraperwiki library
