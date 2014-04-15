@@ -13,12 +13,12 @@ $dom = new simple_html_dom();
 $dom->load($html);
 //foreach($dom->find("p strong") as $title){
 preg_match("/Date: (.*)<br \/>/i", $html, $date);
-preg_match("/Conference Title: <strong>(.*)</i", $html, $title);
+preg_match("/Conference Title: <strong>(.*)<\/strong>/i", $html, $title);
 preg_match("/Where: (.*)</i", $html, $where);
 
-print_r($date);
-print_r($title);
-print_r($where);
+print_r($date[1]);
+print_r($title[1]);
+print_r($where[1]);
 
 // Write out to the sqlite database using scraperwiki library
 //scraperwiki::save_sqlite(array('name'), array('name' => 'susan', 'occupation' => 'software developer'));
