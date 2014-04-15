@@ -16,7 +16,8 @@ $dom->load($html);
   preg_match("/Conference Title: <strong>(.*)<\/strong>/i", $html, $conf['title']);
   preg_match("/Where: (.*)</i", $html, $conf['where']);
 
-  print_r($conf[][1]\n);
+  $abst[] = $conf;
+  print_r($abst\n);
 }
 // Write out to the sqlite database using scraperwiki library
 //scraperwiki::save_sqlite(array('name'), array('name' => 'susan', 'occupation' => 'software developer'));
